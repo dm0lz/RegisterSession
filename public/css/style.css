@@ -1,0 +1,21 @@
+header h1 {
+  text-align: center;
+}
+header h2 {
+  text-align: center;
+  color: red;
+}
+
+.down {
+  margin-top: 250px;
+  -webkit-transition-duration: 0.8s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.up {
+  margin-top: 0px;
+  -webkit-transition-duration: 0.8s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.resultat {
+  text-align: center;
+}

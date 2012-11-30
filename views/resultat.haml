@@ -1,0 +1,34 @@
+!!! 5
+%html
+  %head
+    %title resultat
+    %link(rel="stylesheet" type="text/javascript" href="/css/bootstrap.css")/
+    %link(rel='stylesheet' type='text/css' href='css/style.css')
+  %body
+    %nav
+      %header 
+        %h1 Fetcher pass the Hash !!!
+      %section.navbar-inner
+
+      %section.resultat
+        Voici les parametres passes :
+        - if not @username.nil?
+          = @username
+        - if not @email.nil?
+          = @email
+        - if not @password.nil?
+          = @password
+        - if not @passwordConfirm.nil?
+          = @passwordConfirm
+      -2.times do
+        %br
+      %section.resultat    
+        Et voici le Hash de session :
+        %br
+        - if not @test.nil?
+          = @parsedTest
+
+    %script(type='text/javascript' src='/js/jquery.js')
+    %script(type='text/javascript' src='/js/test.js')
+
+

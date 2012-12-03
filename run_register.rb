@@ -1,3 +1,3 @@
-require './login.rb'
+require './register.rb'
 
 Register.run!

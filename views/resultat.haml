@@ -7,11 +7,11 @@
   %body
     %nav
       %header 
-        %h1 Fetcher pass the Hash !!!
+        %h1 Congratulations you got succefully registered !!!
       %section.navbar-inner
 
       %section.resultat
-        Voici les parametres passes :
+        Here are the passed parameters :
         - if not @username.nil?
           = @username
         - if not @email.nil?
@@ -23,10 +23,14 @@
       -2.times do
         %br
       %section.resultat    
-        Et voici le Hash de session :
+        And here is what was inserted into mongodb :
         %br
         - if not @test.nil?
           = @parsedTest
+      -2.times do
+        %br
+      %section.well.well-large
+        %a.btn.btn-primary.btn-large{:href => "http://localhost:4567/"} Add social Network Accounts
 
     %script(type='text/javascript' src='/js/jquery.js')
     %script(type='text/javascript' src='/js/test.js')

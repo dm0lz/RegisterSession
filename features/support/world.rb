@@ -3,7 +3,7 @@ module MongoTest
 		@browser ||= Watir::Browser.new :firefox
 	end
 	def start
-		browser.goto "http://localhost:4567"
+		browser.goto "http://localhost:4566/register"
 	end
 	def stop
 		browser.close

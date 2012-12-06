@@ -59,7 +59,7 @@ use Rack::Flash
 
 helpers do
   def client
-    @client ||= Mongo::Connection.new("mongocfg1.fetcher")
+    @client ||= Mongo::Connection.new
   end
   def db
     @db ||= client["test"]

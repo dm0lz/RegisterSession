@@ -26,13 +26,13 @@ use Rack::Flash
     session[:session_id] = env['rack.session']['session_id']
 
     to_be_inserted = { "login" => session[:username], "email" => session[:email], "password" => session[:password] }
-    
-    if session[:password] == session[:inputPasswordConfirm] && not_in_db?
+    #binding.pry
+    if session[:password] == session[:inputPasswordConfirm] && not_in_db? && password_not_nil?
       session[:mongo_id] = coll.insert(to_be_inserted)
       redirect '/resultat'
     else
       #binding.pry
-      flash[:notice] = "password doesnt match or email is already_in_db !!"
+      flash[:notice] = "error !! password doesnt match or email is already_in_db or password is blank !!"
       redirect '/'
     end
     #binding.pry
@@ -54,16 +54,19 @@ use Rack::Flash
 
 helpers do
   def client
-    client ||= Mongo::Connection.new("mongocfg1.fetcher")
+    @client ||= Mongo::Connection.new
   end
   def db
-    db ||= client["test"]
+    @db ||= client["test"]
   end
   def coll
-    coll ||= db["users"]
+    @coll ||= db["users"]
   end
   def not_in_db?
     coll.find_one( "email" => session[:email] ).nil?
+  end
+  def password_not_nil?
+    not session[:password].empty?
   end
 end
 

@@ -9,3 +9,7 @@ gem "symbolmatrix"
 gem "sinatra"
 gem "haml"
 gem "rack-flash3"
+gem "cucumber"
+gem "watir-webdriver"
+gem "rspec"
+
